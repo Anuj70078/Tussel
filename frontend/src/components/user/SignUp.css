@@ -1,0 +1,50 @@
+.signup-bg-image {
+    background-image: url('https://cdn.wallpapersafari.com/9/59/ZcVzSn.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: absolute; */
+}
+
+.login-bg-image {
+    background-image: url('https://wallpapercave.com/wp/wp4365707.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: absolute; */
+}
+
+.competitionEntry-bg-image {
+    background-image: url('https://imageio.forbes.com/specials-images/imageserve/5f1cd8680d707a6f84e96b81/0x0.jpg?format=jpg&width=1200');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .card-position{
+    margin-top: 20%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    width: 70%;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 10px;
+} */
+
+.signup-card-position {
+    padding-top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.login-card-position {
+    padding-top: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.competition-card-position {
+    padding-top: 5px;
+
+}

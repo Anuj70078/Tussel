@@ -1,0 +1,5 @@
+.nav-item .active{
+    color: red !important;
+    border-bottom: 3px solid red;
+    max-width: fit-content;
+}
