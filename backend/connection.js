@@ -3,7 +3,7 @@ const mongoose = require('mongoose');          //write req and press enter
 
 const dbName = 'Tussel';       //no space between name
 
-const url = `mongodb+srv://ashutoshshubham:ashutosh@cluster0.cqjsjz0.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://anujch70078:1234@cluster0.xzd4lls.mongodb.net/tussle?retryWrites=true&w=majority`;
 
 mongoose.connect(url)
 //write thenc and press enter
