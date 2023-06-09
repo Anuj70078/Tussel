@@ -7,6 +7,7 @@ const organisationRouter = require('./routers/organisationRouter');
 // const offlineRouter = require('./routers/offlineRouter');
 const feedbackRouter = require('./routers/feedbackRouter');
 const competitionRouter = require('./routers/competitionRouter');
+const resultRouter = require('./routers/resultRouter');
 
 
 
@@ -44,6 +45,7 @@ app.use('/organisation', organisationRouter)
 // app.use('/offline', offlineRouter)
 app.use('/feedback', feedbackRouter)
 app.use('/competition', competitionRouter)
+app.use('/result', resultRouter)
 
 
 

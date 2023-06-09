@@ -31,16 +31,16 @@ const Home = () => {
 
           <div className="col-sm-6 col-md-6">
 
-            <div className="card">
+            <div className="card h-100">
               <div className="card-body">
                 <h3 className="card-title"><b><i>ONLINE COMPETITION</i></b></h3>
                 <p className="card-text">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio exercitationem, inventore necessitatibus accusamus cupiditate doloribus minus eius recusandae! Dignissimos explicabo fuga impedit facilis. Modi provident cum eius. Aut quibusdam, facilis minus nostrum odit ducimus? Suscipit ipsum id explicabo quam soluta? Quia nulla, eaque tenetur sapiente iusto quibusdam laboriosam minima rem.
                 </p>
-                <Link to='/organisationPro'>
+                {/* <Link to='/organisationPro'>
                   <button type="button" className="btn btn-primary">Get Started
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -48,18 +48,18 @@ const Home = () => {
           </div>
           <div className="col-sm-6 col-md-6">
 
-            <div className="card">
+            <div className="card h-100">
               <div className="card-body">
                 <h3 className="card-title"><b><i>OFFLINE COMPETITION</i></b></h3>
                 <p className="card-text">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem delectus, eligendi, expedita possimus nihil corrupti facilis quos sequi in a unde ebhsgcbvbc corporis optio numquffsafam plac fasfasfa eat cum rem dsfsafdf etretwtrt vitae debitis exercitationem similique. Consectetur nam, iure ea, quaerat sequi animi repellat totam quod quos sed asperiores molestias quibusdam, velit ullam fdsfd3rtgf aut fugit?
                 </p>
-                <Link to='/organisationPro'>
+                {/* <Link to='/organisationPro'>
 
                   <button type="button" className="btn btn-primary">
                     Get Started
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
 

@@ -5,9 +5,9 @@ const Footer = () => {
         <div>
             <footer className="bg-dark text-center text-white">
                 {/* Grid container */}
-                <div className="container p-4 pb-0">
+                <div className="container p-2 pb-0">
                     {/* Section: Social media */}
-                    <section className="mb-4">
+                    <section className="mb-2">
                         {/* Facebook */}
                         <a
                             className="btn btn-outline-light btn-floating m-1"
@@ -62,7 +62,7 @@ const Footer = () => {
                 {/* Grid container */}
                 {/* Copyright */}
                 <div
-                    className="text-center p-3"
+                    className="text-center p-2"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
                 >
                     © 2023 Copyright:

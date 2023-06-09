@@ -3,17 +3,20 @@ import React from 'react'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import './SignUp.css'
+import { useNavigate } from 'react-router-dom'
 
 
 const CompetitionEntry = () => {
 
 
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
-    console.log(currentUser)
+    console.log(currentUser);
+    const navigate = useNavigate();
 
     const competitionData = async (formdata, { resetForm }) => {
 
-        console.log(formdata)
+        console.log(formdata);
+
 
         const res = await fetch('http://localhost:5000/competition/add', {
             method: 'POST',
@@ -31,7 +34,10 @@ const CompetitionEntry = () => {
                 title: 'Success',
                 text: 'Data Added Successfully'
             })
-            resetForm()
+            
+            resetForm();
+            window.open('https://buy.stripe.com/test_14kg1L1xp6bd1pe3cc');
+            
         }
 
     }
