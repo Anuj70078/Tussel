@@ -63,10 +63,7 @@ const Signup = () => {
       })
       navigate('/main/signin');
     }
-
   }
-
-
   return (
     <div className='signup-bg-image vh-100'>
 
