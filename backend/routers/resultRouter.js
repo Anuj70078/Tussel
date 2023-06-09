@@ -29,7 +29,7 @@ router.post('/add', (req, res) => {
 //Reading Data
 //reading mostly use get method
 router.get('/getall', (req,res) => {
-    Model.find({})
+    Model.find({}).populate('competition')
     .then((result) => {
         res.json(result);
     }).catch((err) => {

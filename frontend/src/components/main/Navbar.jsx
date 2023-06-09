@@ -15,7 +15,7 @@ const Navbar = () => {
                 // <ul className="navbar-nav">
                 <>
                     {/* <li className="nav-item"> */}
-                    <NavLink className="nav-link" aria-current="page" to="/signin">
+                    <NavLink className="nav-link" aria-current="page" to="/main/signin">
 
                         <button type="button" className="btn btn-success me-3 mb-1">
                             Login
@@ -23,7 +23,7 @@ const Navbar = () => {
                     </NavLink>
                     {/* </li> */}
                     {/* <li className="nav-item"> */}
-                    <NavLink className="nav-link" aria-current="page" to="/signup">
+                    <NavLink className="nav-link" aria-current="page" to="/main/signup">
                         <button type="button" className="btn btn-success me-3 mb-1">
                             SignUp
                         </button>

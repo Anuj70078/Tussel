@@ -10,10 +10,6 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-
-
-
-
   const addOrg = async () => {
     // console.log(formdata)
     // resetForm()
@@ -65,7 +61,7 @@ const Signup = () => {
         title: 'Success',
         text: 'Signed Successfully'
       })
-      navigate('/main/login');
+      navigate('/main/signin');
     }
 
   }

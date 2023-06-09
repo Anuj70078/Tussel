@@ -9,6 +9,7 @@ const mySchema = new Schema({
     name : String,
     email : String,
     password : String,
+    role : {type : String, default: 'admin'},
     // organisation : {type : Types.ObjectId, ref: 'organisation'},
     // feedback : {type : Types.ObjectId, ref: 'feedback'}
 })

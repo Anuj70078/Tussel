@@ -97,7 +97,7 @@ const DisplayDetails = () => {
                                                 <p><b>Rewards : </b>{cItem.rewards}</p>
                                                 <p><b>Venue : </b>{cItem.venue}</p>
                                                 <button type="button" className="btn btn-danger" onClick={() => deleteCompData(cItem._id)}>Delete</button>
-                                                <Link to={'/user/updateComp_data/' + cItem._id}><button type="button" className="btn btn-success">Update Data</button></Link>
+                                                <Link to={'/user/competitiondetails/' + cItem._id}><button type="button" className="btn btn-success">Update Data</button></Link>
                                                 <hr />
                                             </div>
 
