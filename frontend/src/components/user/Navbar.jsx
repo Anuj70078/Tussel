@@ -61,6 +61,10 @@ const Navbar = () => {
                         <Link className="nav-link text-white" to='/user/competitionEntry'
                         >Competition</Link>
                     </li>
+                    <li className="nav-item">
+                                <Link className="nav-link text-white" aria-current="page" to="/main/declaredResults">Declared Results
+                                </Link>
+                            </li>
                     <button type="button" className="btn btn-danger me-3 mb-2" onClick={logout}>
                         LogOut
                     </button>

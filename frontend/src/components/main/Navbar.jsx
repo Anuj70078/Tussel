@@ -82,7 +82,7 @@ const Navbar = () => {
                         height={45}
                         className='mx-1'
                     />
-                    <Link className="navbar-brand text-white" to="homepage"><b>TUSSEL</b></Link>
+                    <Link className="navbar-brand text-white" to="homepage"><b>TUSSLE</b></Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -99,6 +99,10 @@ const Navbar = () => {
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <Link className="nav-link text-white" aria-current="page" to="homepage">Home
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-white" aria-current="page" to="/main/declaredResults">Declared Results
                                 </Link>
                             </li>
 
