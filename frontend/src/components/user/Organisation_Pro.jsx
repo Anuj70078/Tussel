@@ -11,12 +11,9 @@ const Organisation_Pro = () => {
 
     const orgSubmit = async (formdata, { resetForm }) => {
 
-
         console.log(formdata)
-
-
-        const res = await fetch('http://localhost:5000/organisation/add', {
-            method: 'POST',
+        const res = await fetch('http://localhost:5000/user/update/'+currentUser._id, {
+            method: 'PUT',
             body: JSON.stringify(formdata),
             headers: {
                 'Content-Type': 'application/json'
@@ -30,6 +27,10 @@ const Organisation_Pro = () => {
                 title: "Success",
                 text: "Data Added"
             })
+            const data = await res.json()
+            console.log(data);
+            // setCurrentUser(data);
+            // sessionStorage.setItem('user', JSON.stringify(data));
             // resetForm()
         }
     }
@@ -46,8 +47,8 @@ const Organisation_Pro = () => {
     // console.log(res.status)
 
     useEffect(() => {
-        orgSubmit();
-        fetchOrgData();
+        // orgSubmit();
+        // fetchOrgData();
     }, [])
 
 
@@ -57,12 +58,12 @@ const Organisation_Pro = () => {
 
 
     return (
-        <div>
+        <div className='vh-100 d-flex align-items-center justify-content-center' style={{backgroundSize: 'cover', backgroundImage: `url('https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?cs=srgb&dl=pexels-pixabay-273209.jpg&fm=jpg')`}}>
             <div className="card w-50 mx-auto mt-2">
                 <div className="card-body">
-                    <h2 className="card-title text-center mb-5">ORGANISATION DETAIL</h2>
+                    <h2 className="card-title text-center mb-5">Organisation Profile</h2>
                     <Formik
-                        initialValues={{ name: currentUser.name, email: currentUser.email, org_name: '', org_details: '', user: currentUser._id }}
+                        initialValues={currentUser}
                         onSubmit={orgSubmit}>
                         {({ values, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>

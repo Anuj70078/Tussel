@@ -2,12 +2,14 @@ import { Formik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import app_config from '../../config';
 
 const UpdateComp_data = () => {
 
     const { compId } = useParams();
     const [compData, setCompData] = useState(null);
     const [loading, setLoading] = useState(false);
+    
 
     const navigate = useNavigate();
 
@@ -29,6 +31,7 @@ const UpdateComp_data = () => {
     useEffect(() => {
         getCompDataById();
     }, [])
+
 
     const updateCompData = async (formdata) => {
         console.log(formdata)
@@ -206,18 +209,13 @@ const UpdateComp_data = () => {
         }
     }
 
-
-
-
-
-
-
-
+    
 
     return (
-        <div className='container'>
-
+        <div className='container mt-5'>
             {showUpdateCompForm()}
+            
+            
         </div>
     )
 }

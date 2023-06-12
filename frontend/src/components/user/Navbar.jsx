@@ -39,14 +39,14 @@ const Navbar = () => {
     const showLogout = () => {
         if (loggedIn) {
             return (
-                <ul className="navbar-nav">
+                <ul className="navbar-nav ms-auto">
                     {/* // <li className="nav-item"> */}
                     {/* <button className="btn btn-danger ms-3" aria-current="page" onClick={logout}>
                         Logout
                     </button> */}
                     <li className="nav-item">
                         <Link className="nav-link text-white" to='/user/organisationPro'
-                        >Organisation Profile</Link>
+                        >Profile</Link>
                     </li>
 
                     <li className="nav-item">
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link text-white" to='/user/competitionEntry'
-                        >Competition</Link>
+                        >New Competition</Link>
                     </li>
                     <li className="nav-item">
                                 <Link className="nav-link text-white" aria-current="page" to="/main/declaredResults">Declared Results
@@ -87,6 +87,7 @@ const Navbar = () => {
                         className='mx-1'
                     />
                     <Link className="navbar-brand text-white" to="homepage"><b>TUSSEL</b></Link>
+                    <h3 className='text-white mx-auto'>Organisation Dashboard</h3>
                     <button
                         className="navbar-toggler"
                         type="button"

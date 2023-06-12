@@ -22,6 +22,7 @@ import Admin from './components/admin';
 import ManageCompetitions from './components/admin/ManageCompetitions';
 import ManageUser from './components/admin/ManageUser';
 import AdminProvider from './context/AdminProvider';
+import Checkout from './components/user/Checkout';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
@@ -43,6 +44,7 @@ function App() {
               <Route element={<SignIn />} path="signin" />
               <Route element={<ForgetPswd />} path="forgetpswd" />
               <Route element={<DeclaredResults />} path="declaredResults" />
+              <Route element={<Checkout />} path="checkout" />
             </Route>
 
             <Route

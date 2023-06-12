@@ -59,8 +59,10 @@ router.get('/getbyuser/:userid', (req, res) => {
 })
 
 router.put('/updateComp_data/:CompId', (req, res) => {
+    console.log(req.body);
     Model.findByIdAndUpdate(req.params.CompId, req.body)
         .then((result) => {
+            
             res.json(result);
         }).catch((err) => {
             console.log(err);
