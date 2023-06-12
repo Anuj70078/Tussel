@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import app_config from '../../config';
 
 const DeclaredResults = () => {
   const [results, setResults] = useState([]);
@@ -32,10 +33,14 @@ const DeclaredResults = () => {
                 <div className="row">
                   <div className="col-md-6">
                     <h5 className="card-title">{result.competition.description}</h5>
+
+                    <div className='d-flex'>
+                      <h3>Competition Held on : {new Date(result.createdAt).toLocaleDateString()}</h3>
+                    </div>
                   </div>
                   <div className="col-md-6">
-                    <h5 className="card-title">{result.data.name}</h5>
-                    <p className="card-text">{result.data.image}</p>
+                    <img style={{height: '200px'}} className='d-block m-auto' src={app_config.apiUrl + '/' + result.img} alt="" />
+                    <h5 className="card-title text-center">{result.name}</h5>
                   </div>
                 </div>
               </div>

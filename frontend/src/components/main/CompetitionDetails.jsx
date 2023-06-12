@@ -11,6 +11,8 @@ const CompetitionDetails = () => {
 
   const navigate = useNavigate();
 
+  const [selImg, setselImg] = useState('');
+
   const [paperMode, setPaperMode] = useState('file');
 
   const [contentText, setContentText] = useState('');
@@ -31,7 +33,7 @@ const CompetitionDetails = () => {
   const updatePaper = async () => {
     console.log(contentText);
     if (paperMode === 'file') {
-        await updateCompDataFile();
+      await updateCompDataFile();
     } else {
       await updateCompDataContent();
     }
@@ -51,6 +53,39 @@ const CompetitionDetails = () => {
       }
     });
   };
+  const uploadImage = (e) => {
+    const file = e.target.files[0];
+    const fd = new FormData();
+    setselImg(file);
+    fd.append('myfile', file);
+    fetch(apiUrl + '/util/uploadfile', {
+      method: 'POST',
+      body: fd
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log('file uploaded');
+      }
+    });
+  };
+
+  const displayPaper = () => {
+    if (compData) {
+      if (compData.paperMode === 'file') {
+        return (
+          <>
+            <img src={apiUrl + '/' + compData.paper} alt="" />
+          </>
+        );
+      } else {
+        return (
+          <>
+            <h3>Paper</h3>
+            <p>{compData.paper}</p>
+          </>
+        );
+      }
+    }
+  };
 
   const updateCompDataFile = async () => {
     const res = await fetch('http://localhost:5000/competition/updateComp_data/' + id, {
@@ -69,7 +104,7 @@ const CompetitionDetails = () => {
         title: 'Success',
         text: 'Data Updated Successfully'
       });
-    //   navigate('/user/displayDetails');
+      //   navigate('/user/displayDetails');
     }
   };
   const updateCompDataContent = async () => {
@@ -89,7 +124,7 @@ const CompetitionDetails = () => {
         title: 'Success',
         text: 'Data Updated Successfully'
       });
-    //   navigate('/user/displayDetails');
+      //   navigate('/user/displayDetails');
     }
   };
 
@@ -111,7 +146,8 @@ const CompetitionDetails = () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            data: values,
+            name: values.name,
+            img: selImg.name,
             competition: id,
             createdAt: new Date()
           })
@@ -139,7 +175,7 @@ const CompetitionDetails = () => {
               <input className="form-control" id="name" onChange={resultForm.handleChange} value={resultForm.values.name} />
 
               <label>Image</label>
-              <input className="form-control" id="image" onChange={resultForm.handleChange} value={resultForm.values.image} />
+              <input className="form-control"onChange={uploadImage} type='file' />
 
               <button className="btn btn-primary mt-5">Submit</button>
             </form>
@@ -147,43 +183,55 @@ const CompetitionDetails = () => {
         </div>
         <div className="card mt-4">
           <div className="card-body">
-            <h1 className="text-center">Update Papers</h1>
-            <hr />
-
-            <input
-              type="radio"
-              name="mode"
-              checked={paperMode === 'file'}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setPaperMode('file');
-                }
-              }}
-            /> <label className='fw-bold'> Upload File</label>
-            <br />
-            <input type="radio" name="mode" checked={paperMode === 'content'} onChange={(e) => {
-                if (e.target.checked) {
-                  setPaperMode('content');
-                }
-              }} /> <label className='fw-bold'>Upload Content</label>
-              <br/><br/>
-            {paperMode === 'file' ? (
-              <>
-                <label className="btn btn-dark" htmlFor="paper">
-                  {' '}
-                  <i class="fas fa-upload"></i> Upload Paper File{' '}
-                </label>
-                <input type="file" onChange={uploadFile} hidden id="paper" />
-              </>
-            ) : (
-              <>
-                <label>Provide Paper Content</label>
-                <textarea className="form-control" rows={5} onChange={(e) => setContentText(e.target.value)} value={contentText}></textarea>
-              </>
-            )}
-            <button className="btn btn-primary mt-4" onClick={updatePaper}>
-              Update Competition
-            </button>
+            <div className="row">
+              <div className="col-md-6">
+                <h1 className="text-center">Update Papers</h1>
+                <hr />
+                <input
+                  type="radio"
+                  name="mode"
+                  checked={paperMode === 'file'}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setPaperMode('file');
+                    }
+                  }}
+                />{' '}
+                <label className="fw-bold"> Upload File</label>
+                <br />
+                <input
+                  type="radio"
+                  name="mode"
+                  checked={paperMode === 'content'}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setPaperMode('content');
+                    }
+                  }}
+                />{' '}
+                <label className="fw-bold">Upload Content</label>
+                <br />
+                <br />
+                {paperMode === 'file' ? (
+                  <>
+                    <label className="btn btn-dark" htmlFor="paper">
+                      {' '}
+                      <i class="fas fa-upload"></i> Upload Paper File{' '}
+                    </label>
+                    <input type="file" onChange={uploadFile} id="paper" className='form-control' />
+                  </>
+                ) : (
+                  <>
+                    <label>Provide Paper Content</label>
+                    <textarea className="form-control" rows={5} onChange={(e) => setContentText(e.target.value)} value={contentText}></textarea>
+                  </>
+                )}
+                <button className="btn btn-primary mt-4" onClick={updatePaper}>
+                  Update Competition
+                </button>
+              </div>
+              <div className="col-md-6">{displayPaper()}</div>
+            </div>
           </div>
         </div>
       </div>

@@ -35,6 +35,8 @@ app.use('/competition', competitionRouter);
 app.use('/result', resultRouter);
 app.use('/util', utilRouter);
 
+app.use(express.static('./static/uploads'));
+
 //to start express server
 app.listen(port, () => {
   console.log('express server started');

@@ -11,6 +11,16 @@ const CompetitionEntry = () => {
   console.log(currentUser);
   const navigate = useNavigate();
 
+  const getPaymentLink = async (participants) => {
+    if (participants <= 50 && participants > 0) {
+      return 'https://buy.stripe.com/test_14kg1L1xp6bd1pe3cc';
+    } else if (participants <= 100 && participants > 50) {
+      return 'https://buy.stripe.com/test_14kg1L1xp6bd1pe3cc';
+    } else if (participants <= 250 && participants > 100) {
+      return 'https://buy.stripe.com/test_14kg1L1xp6bd1pe3cc';
+    }
+  };
+
   const { venueList } = app_config;
 
   const competitionData = async (formdata, { resetForm }) => {
@@ -37,8 +47,8 @@ const CompetitionEntry = () => {
 
       localStorage.setItem('competition', JSON.stringify(data));
 
-    //   resetForm();
-      window.open('https://buy.stripe.com/test_14kg1L1xp6bd1pe3cc');
+      //   resetForm();
+      window.open(getPaymentLink(formdata.participants), '_blank');
     }
   };
 
@@ -68,10 +78,9 @@ const CompetitionEntry = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="row mt-3">
                     <div className="col-md-6">
-
-                    <label className="form-label" htmlFor="textAreaExample">
-                          <b>Mode of Competition</b>
-                        </label>
+                      <label className="form-label" htmlFor="textAreaExample">
+                        <b>Mode of Competition</b>
+                      </label>
                       <div className="form-check mt-2">
                         <input className="form-check-input" type="radio" name="mode" id="offline" onChange={handleChange} value="offline" />
                         <label className="form-check-label" htmlFor="offline">
@@ -105,11 +114,9 @@ const CompetitionEntry = () => {
                           <b>Venue</b>
                         </label>
                         <select className="form-control" name="venue" onChange={handleChange} value={values.venue}>
-                            {
-                                venueList.map((venue, index) => (
-                                    <option value={venue}>{venue}</option>
-                                ))
-                            }
+                          {venueList.map((venue, index) => (
+                            <option value={venue}>{venue}</option>
+                          ))}
                         </select>
                       </div>
                       <div className="mb-3">

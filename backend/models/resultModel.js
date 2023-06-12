@@ -4,7 +4,8 @@ const {Schema, model} = require('../connection');
 
 const mySchema = new Schema({
     competition : {type : Types.ObjectId, ref : 'competition'},
-    data : Object,
+    img: String,
+    name : String,
     createdAt : Date,
 
 })
