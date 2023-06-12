@@ -99,7 +99,7 @@ const SignIn = () => {
                     <label>Password</label>
                     <input required type="password" className="form-control mb-3" value={values.password} name="password" onChange={handleChange} />
 
-                    <Link to="/forgetpswd" className="">
+                    <Link to="http://localhost:3000/main/forgetpswd" className="">
                       Forgot Password
                     </Link>
 
