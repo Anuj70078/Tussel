@@ -31,7 +31,7 @@ const ForgetPswd = () => {
                     <button type='submit' className="btn btn-primary w-100 mb-4">
                         Submit
                     </button>
-                    <Link to='/signin' className='text-center'>Back to SignIn</Link>
+                    <Link to='http://localhost:3000/main/signin' className='text-center'>Back to SignIn</Link>
                 </div>
             </div>
 
